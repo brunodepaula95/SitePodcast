@@ -37,6 +37,9 @@ body{
 }
 
 .topo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: radial-gradient(white, var(--cor04));
     text-align: center;
     min-height: 150px;
@@ -44,7 +47,7 @@ body{
 }
 
 .topo > img{
-    max-width: 500px;
+    max-width: 100%;
     max-height: 450px;
     height: auto;
     width: auto;
@@ -52,6 +55,9 @@ body{
 }
 
 .menu{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
     background-color: var(--cor01);
     text-align: center;
     padding: 15px;
@@ -64,12 +70,13 @@ body{
 .menu ul{
     padding: 0px;
     margin: 0px;
-    background-color: var(--cor01);
+    
     list-style: none;
 }
 
 .menu ul li{
     display: inline;
+    flex-wrap: wrap;
 }
 
 .menu ul li a{
@@ -77,6 +84,7 @@ body{
     display: inline-block;
     color: white;
     text-decoration: none;
+    font-size: clamp(0.9em, 1vw, 2em);
 }
 
 .menu ul li a:hover{
@@ -94,12 +102,12 @@ body{
 #sobre > h1{
     font-size: 2em;
     color: var(--cor01);
+    font-size: clamp(1.5em, 2vw, 2em);
 }
 
 #sobre > p{
-    font-size: larger;
-    padding-top: 5px;
-    padding-bottom: 100px;
+    font-size: clamp(1.2em, 1.2vw, 2em);
+    padding: 5px 20px 100px 20px;
     
 }
 
@@ -112,11 +120,12 @@ body{
 #moments > h1{
     color: var(--cor01);
     padding-bottom: 5px;
+    font-size: clamp(1.5em, 2vw, 2em);
 }
 
 #moments > p{
-    font-size: larger;
-    padding-bottom: 10px;
+    font-size: clamp(1.2em, 1.2vw, 2em);
+    padding: 5px 20px 10px 20px;
 }
 #caixavideo{
     background-color: white;
@@ -152,13 +161,13 @@ div.video > iframe{
 }
 
 #ouça h1{
-    font-size: 2em;
+    font-size: clamp(1.5em, 2vw, 2em);
     color: var(--cor01);
     padding-bottom: 5px;
 }
 
 #ouça p{
-    font-size: larger;
+    font-size: clamp(1.2em, 1.2vw, 2em);
     padding-bottom: 10px;
 }
 
@@ -168,7 +177,7 @@ div.video > iframe{
 }
 
 #social h2{
-    font-size: 2em;
+    font-size: clamp(1.5em, 2vw, 2em);
     color: var(--cor01);
 }
 
@@ -191,4 +200,39 @@ div.video > iframe{
 }
 
 
+@media (min-width: 480px){
+    .topo > img{
+        width: 300px;
+    }
+}
 
+@media (min-width: 768px){
+    .topo > img{
+        width: 400px;
+    }
+}
+
+@media (min-width: 1024px){
+    .topo > img{
+        width: 500px;
+    }
+}
+
+@media (min-width: 1200px){
+    .topo > img{
+        width: auto;
+    }
+}
+
+@media (max-width: 480px){
+    .menu ul li a{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px){
+    .menu{
+        width: 40px;
+    }
+}
